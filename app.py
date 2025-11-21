@@ -10,6 +10,8 @@ def exibir_nome_do_programa():
 ██████╔╝██║░░██║██████╦╝╚█████╔╝██║░░██║  ███████╗██╔╝╚██╗██║░░░░░██║░░██║███████╗██████╔╝██████╔╝
 ╚═════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝  ╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝╚═════╝░╚═════╝░
 """)
+    
+restaurantes = ['Pizza', 'churrasco', 'hamburguer']
 
 def exibir_opcoes():
     print('1. Cadastrar Restaurante')
@@ -18,8 +20,7 @@ def exibir_opcoes():
     print('4. Sair\n')
 
 def finalizar_app():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    print('Finalizando app')
+    exibir_sub_titulo('Finalizando o programa...')
     sys.exit(0)
 
 def escolher_opcao():
@@ -27,28 +28,54 @@ def escolher_opcao():
         return int(input('Escolha uma opção: '))
     except ValueError:
         return None
+    
+def cadastrar_restaurante():
+    exibir_sub_titulo('Cadastro de novos restaurantes')
+    nome = input('Digite o nome do restaurante: ')
+    restaurantes.append(nome)
+    print(f'Restaurante "{nome}" cadastrado com sucesso!')
+    voltar_ao_menu()
+
+def listar_restaurantes():
+    exibir_sub_titulo('Listando Restaurantes\n')
+
+    for restaurante in restaurantes :
+        print('-' + restaurante)
+
+    voltar_ao_menu()
+
+def exibir_sub_titulo(texto):
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(texto)
+    print()
+
+def voltar_ao_menu():
+    input('\nDigite uma tecla para voltar ao menu principal! ')
+    main()
+
+def continuar():
+    input('\nPressione Enter para continuar...')
 
 def main():
     while True:
-        os.system('cls' if os.name == 'nt' else 'clear')
+        exibir_sub_titulo('')
         exibir_nome_do_programa()
         exibir_opcoes()
         opcao = escolher_opcao()
 
         if opcao == 1:
-            print('Cadastrar Restaurante')
-            input('\nPressione Enter para continuar...')
+            cadastrar_restaurante()
         elif opcao == 2:
-            print('Listar Restaurantes')
-            input('\nPressione Enter para continuar...')
+            listar_restaurantes()
+            continuar()
         elif opcao == 3:
             print('Ativar Restaurante')
-            input('\nPressione Enter para continuar...')
+            continuar()
         elif opcao == 4:
             finalizar_app()
         else:
             print('Opção inválida')
-            input('\nPressione Enter para continuar...')
+            continuar()
 
 if __name__ == '__main__':
     main()
