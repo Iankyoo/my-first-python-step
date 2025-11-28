@@ -7,22 +7,22 @@ Bem-vindo ao **Sabor Express**! Este é o meu primeiro projeto em Python. Trata-
 
 Atualmente, o projeto apresenta a interface principal e a lógica de navegação do menu.
 
-## 🔨 Funcionalidades do Projeto
+## Funcionalidades do Projeto
 
 - **Interface Visual:** Exibição de banner estilizado em ASCII Art.
 - **Menu Interativo:** Opções claras para o usuário navegar.
 - **Leitura de Opções:** O sistema lê a entrada do usuário e direciona para a funcionalidade escolhida.
 - **Estrutura de Decisão:** Uso de `if`, `elif` e `else` para tratar as escolhas.
 
-## 📂 Acesso ao Projeto
+## Acesso ao Projeto
 
 Você pode baixar o código fonte ("script") e executá-lo em sua máquina local.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * `Python`
 
-## 🚀 Como executar o projeto
+## Como executar o projeto
 
 1. Certifique-se de ter o **Python** instalado em sua máquina.
 2. Baixe o arquivo `app.py` (ou o nome que você deu ao arquivo).
